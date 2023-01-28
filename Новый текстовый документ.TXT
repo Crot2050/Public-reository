@@ -1,0 +1,272 @@
+a=int(input("Введите длину стороны квадрата "))
+p=a * 4
+print("периметр=",p)
+print("площадь=",a ** 2)
+a=int(input("Введите длину прямоугольника "))
+b=int(input("Введите ширину прямоугольника "))
+s=a * b
+print("периметр=",a * 2 + b * 2)
+print("площадь=",s)
+
+simbol=input("Введите символ: ")
+print(simbol * (p + s))
+
+s=int(input("Введите заработную плату в месяц "))
+m=int(input("Введите какой процент(%) уходит на ипотеку: "))
+k=int(input("Введите, какой процент(%) уходит на жизнь: "))
+print("На ипотеку было потрачено: ",int(s * 12 * m / 100), "рублей")
+print("Было накоплено: ",int(s * 12 - (s * 12 * m / 100) - (s * k / 100) * 12), "рублей")
+
+print("Ипотечный калькулятор")
+rate = 12
+residence = input("Укажите регион проживания: ")
+if residence == "Дальний Восток":
+    rate = 2
+    print("Процентная ставка по кредиту: ", rate, "процентов")
+else: 
+    kid = int(input("Укажите колличество детей в вашей семье: "))
+    salary_project = input("Есть ли у вас зарплатный проект в нашем банке? да/нет: ").lower()
+    insurance =  input("Планируете ли вы оформить страхование в нашем банке? да/нет: ").lower()
+    
+    if kid > 3:
+        rate -= 1
+    if salary_project == "да":
+        rate -= 0.5
+    if insurance == "да":
+        rate -= 1.5
+print("Процентная ставка по кредиту: ", rate, "процентов")
+
+
+
+month = input("Введите месяц своего рождения: ")
+date = int(input("Введите дату своего рождения: "))
+if date > 31:
+    print("Вы ввели неверное число!")
+elif month == "март"and date >= 21 or month == "апрель" and date <= 20:
+    print("Ваш знак Зодиака: Овен")
+elif month == "апрель" and date >= 21 or month == "май" and date <= 21:
+    print("Ваш знак Зодиака: Телец")
+elif month == "май" and date >= 22 or month == "июнь" and date <= 21:
+    print("Ваш знак Зодиака: Близнецы")
+elif month == "июнь" and date >= 22 or month == "июль" and date <= 22:
+    print("Ваш знак Зодиака: Рак")
+elif month == "июль" and date >= 23 or month == "август" and date <= 23:
+    print("Ваш знак Зодиака: Лев")
+elif month == "август" and date >= 24 or month == "сентябрь" and date <= 23:
+    print("Ваш знак Зодиака: Дева")
+elif month == "сентябрь" and date >= 24 or month == "октябрь" and date <= 23:
+    print("Ваш знак Зодиака: Весы")
+elif month == "октябрь" and date >= 24 or month == "ноябрь" and date <= 22:
+    print("Ваш знак Зодиака: Скорпион")
+elif month == "ноябрь" and date >= 23 or month == "декабрь" and date <= 22:
+    print("Ваш знак Зодиака: Стрелец")
+elif month == "декабрь" and date >= 23 or month == "январь" and date <= 20:
+    print("Ваш знак Зодиака: Козерог")
+elif month == "январь" and date >= 21 or month == "февраль" and date <= 19:
+    print("Ваш знак Зодиака: Водолей")
+elif month == "февраль" and date >= 20 or month == "март" and date <= 20:
+    print("Ваш знак Зодиака: Рыбы")
+else:
+    print("Вы ввели неверное значение")
+
+
+
+number = int(input("Enter a number from 1 to 100: "))
+1 <= number <= 100 
+if number % 2 != 0:
+    print("Weird")
+elif (number % 2 == 0) and (2 <= number <= 5):
+    print("Not Weird")
+elif (number % 2 == 0) and 6 <= number <= 20:
+    print("Weird")
+elif (number % 2 == 0) and number > 20:
+    print("Not Weird")
+else:
+    print("You entered an invalid number")
+
+
+boys = ['Peter', 'Alex', 'John', 'Arthur', 'Richard']
+girls = ['Kate', 'Liza', 'Kira', 'Emma', 'Trisha']
+boys.sort()
+girls.sort()
+if len(boys)==len(girls):
+    print("Идеальные пары:")
+    for boys, girls in zip(boys, girls):
+      print(boys, "и", girls)
+else:
+    print("Кто-то может осталься без пары!")
+
+
+cook_book = [
+  ['салат',
+      [
+        ['картофель', 100, 'гр.'],
+        ['морковь', 50, 'гр.'],
+        ['огурцы', 50, 'гр.'],
+        ['горошек', 30, 'гр.'],
+        ['майонез', 70, 'мл.'],
+      ]
+  ],
+  ['пицца',  
+      [
+        ['сыр', 50, 'гр.'],
+        ['томаты', 50, 'гр.'],
+        ['тесто', 100, 'гр.'],
+        ['бекон', 30, 'гр.'],
+        ['колбаса', 30, 'гр.'],
+        ['грибы', 20, 'гр.'],
+      ],
+  ],
+  ['фруктовый десерт',
+      [
+        ['хурма', 60, 'гр.'],
+        ['киви', 60, 'гр.'],
+        ['творог', 60, 'гр.'],
+        ['сахар', 10, 'гр.'],
+        ['мед', 50, 'мл.'],  
+      ]
+  ]
+]
+person = int(input("Введите колличество гостей: "))
+for food,cook  in cook_book:
+    print(food)
+    print( )
+    for prod in cook:
+        portions = int(prod[1]) * person
+        print(prod[0], " ", portions, prod[2], sep='')
+    print( )
+
+
+from pprint import pprint
+geo_logs = [
+    {'visit1': ['Москва', 'Россия']},
+    {'visit2': ['Дели', 'Индия']},
+    {'visit3': ['Владимир', 'Россия']},
+    {'visit4': ['Лиссабон', 'Португалия']},
+    {'visit5': ['Париж', 'Франция']},
+    {'visit6': ['Лиссабон', 'Португалия']},
+    {'visit7': ['Тула', 'Россия']},
+    {'visit8': ['Тула', 'Россия']},
+    {'visit9': ['Курск', 'Россия']},
+    {'visit10': ['Архангельск', 'Россия']}
+]
+vizits = []
+for viz in geo_logs:
+    for journey in viz.values():
+        for country in range(len(journey)):
+            if journey[country] == 'Россия':
+                vizits.append(viz)
+pprint(vizits)
+        
+#         if journey[1][1] == 'Россия':
+#             vizits.append(viz)
+#             continue
+# print(vizits)
+
+
+
+
+ids = {'user1': [213, 213, 213, 15, 213],
+       'user2': [54, 54, 119, 119, 119],
+       'user3': [213, 98, 98, 35]}
+values_list = list(ids.values())
+uniq = sum(values_list, [])
+uniq_ids = set(uniq)
+print(uniq_ids)
+
+
+
+queries = [
+	'смотреть сериалы онлайн',
+	'новости спорта',
+	'афиша кино',
+	'курс доллара',
+	'сериалы этим летом',
+	'курс по питону',
+	'сериалы про спорт',
+]
+storage = dict()
+for query in queries:
+    words = len(query.split(' '))
+    if words in storage:
+        storage[words] += 1
+    else:
+        storage[words] = 1
+print(storage)
+queries_count = len(queries)
+for words, query_count in sorted(storage.items()):
+    percent = 100 * query_count / queries_count
+    print('Поисковых запросов, содержащих %d слов(а): %.2f%%' % (words, percent))
+
+
+stats = {'yandex': 120, 'vk': 115, 'google': 99, 'email': 42, 'ok': 98}
+max_sales = ''
+for sales in stats.keys():
+	if stats[sales]> stats.get(max_sales,0):
+		max_sales = sales
+print(max_sales)
+
+
+
+
+
+
+
+
+documents = [
+{"type": "passport", "number": "2207 876234", "name": "Василий Гупкин"},
+{"type": "invoice", "number": "11-2", "name": "Геннадий Покемонов"},
+{"type": "insurance", "number": "10006", "name": "Аристарх Павлов"}
+]
+directories = {
+	'1': ['2207 876234', '11-2', '5455 028765'],
+	'2': ['10006'],
+	'3': []
+}
+def order_doc(documents):
+  owner_doc = input("Введите номер документа: ")
+  for document in documents:
+    if document.get("number") == owner_doc:
+      return document.get("name")
+  return "Документа с таким номером нет"
+#print(order_doc(documents))
+
+def shelf_doc(directories):
+  shelf_doc = input("Введите номер документа: ")
+  for key in directories:
+    if shelf_doc in directories.get(key):
+      return key
+  return"Документ не существует"
+  #print(shelf_doc(directories))
+
+def list_doc(documents):
+  for persons in documents:
+    return f"{persons['type']} {persons['number']} {persons['name']};"
+  #print(list_doc(documents))
+
+def add_doc(documents):
+  dir_new = input("Введите номер полки для хранения: ")
+  if dir_new not in directories:
+    return 'Такой полки нет'
+  doc = {}
+  for question in ('type','number', 'name'):
+    doc[question] = input(f'{question}: ')
+  directories[dir_new] = directories.get(dir_new).append(doc['number'])
+  return 'Документ успешно добавлен'
+
+def main(documents):
+  while True:
+    print("Возможные команды: p,s,l,a")
+    user_input = input("Введите команду:  ")
+    if user_input == "p":
+      print(order_doc(documents))
+    elif user_input == "s":
+      print(shelf_doc(directories))
+    elif user_input == "l":
+      print(list_doc(documents))
+    elif user_input == "a":
+      print(add_doc(documents))
+    else:
+      print("Вы ввели неверную команду!")
+    break
+print(main(documents))
